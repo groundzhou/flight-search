@@ -7,8 +7,7 @@ def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY='dev',
-        SQLALCHEMY_DATABASE_URI='sqlite:///'+os.path.join(app.instance_path, 'iaa.db'),
-        SQLALCHEMY_TRACK_MODIFICATIONS=False,
+        DATABASE=os.path.join(app.instance_path, 'flight.db')
     )
 
     if not test_config:

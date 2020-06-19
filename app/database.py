@@ -5,6 +5,7 @@ from flask import current_app, g
 from flask.cli import with_appcontext
 
 
+# 获取数据库
 def get_db():
     if 'db' not in g:
         g.db = sqlite3.connect(
@@ -16,6 +17,7 @@ def get_db():
     return g.db
 
 
+# 关闭数据库
 def close_db(e=None):
     db = g.pop('db', None)
 
@@ -27,7 +29,7 @@ def close_db(e=None):
 def init_db():
     db = get_db()
 
-    with current_app.open_resource('schema.sql') as f:
+    with current_app.open_resource('../scripts/schema.sql') as f:
         db.executescript(f.read().decode('utf8'))
 
 
