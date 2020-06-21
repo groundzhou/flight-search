@@ -13,12 +13,12 @@ s.mount('https://', HTTPAdapter(max_retries=2))
 
 # 从ip池获取代理ip
 def get_proxy():
-    return requests.get("http://127.0.0.1:5010/get/").json()
+    return requests.get("http://localhost:5010/get/").json()
 
 
 # 删除失效ip
 def delete_proxy(proxy):
-    requests.get("http://127.0.0.1:5010/delete/?proxy={}".format(proxy))
+    requests.get("http://localhost:5010/delete/?proxy={}".format(proxy))
 
 
 class IPBlockedException(Exception):
@@ -150,9 +150,6 @@ def request(source, destination, date, proxy):
     except requests.exceptions.RequestException as e:
         print('Time out', end='\t')
         raise Exception("Time out")
-    except KeyError as e:
-        print('Key Error', end='\t')
-        raise Exception("Key Error")
     except:
         raise Exception("Other error")
     else:
@@ -166,10 +163,6 @@ def request(source, destination, date, proxy):
 
 
 def main():
-    # get_risk()
-    # with open('../data/flights.csv', 'a') as f:
-    #     f.writelines(request('ZUH', 'CKG', '2020-06-20'))
-
     # 城市列表
     with open('../data/cities.json') as f:
         cities = list(set([c['code'] for c in json.load(f)['inLandData']['inlandHot']]))
