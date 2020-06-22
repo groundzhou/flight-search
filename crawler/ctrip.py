@@ -25,24 +25,24 @@ class IPBlockedException(Exception):
     pass
 
 
-def save_point(date, i):
+def save_point(a, b):
     """
     保存断点
-    :param date: 日期
-    :param i: 索引
+    :param a: 参数1
+    :param b: 参数2
     """
-    with open('../data/checkpoints.txt', 'w') as f:
-        json.dump({'date': date, 'i': i}, f)
+    with open('../data/checkpoints.json', 'w') as f:
+        json.dump({'a': a, 'b': b}, f)
 
 
 def load_point():
     """
     读取断点
-    :return: 返回断点日期、索引
+    :return: 返回断点
     """
-    with open('../data/checkpoints.txt', 'r') as f:
+    with open('../data/checkpoints.json', 'r') as f:
         j = json.load(f)
-        return j['date'], j['i']
+        return j['a'], j['b']
 
 
 def get_cities():
@@ -114,7 +114,7 @@ def request(source, destination, date, proxy):
                'TE': 'Trailers'}
 
     try:
-        response = s.post(url=url, headers=headers, json=j, timeout=4, proxies={"https": "http://{}".format(proxy)})
+        response = s.post(url=url, headers=headers, json=j, timeout=7, proxies={"https": "http://{}".format(proxy)})
         fltitem = json.loads(response.text).get('fltitem', None)
         flights = []
         if fltitem:
@@ -162,16 +162,20 @@ def request(source, destination, date, proxy):
         return flights
 
 
-def main():
+def crawl_one_city(departure='CTU'):
+    """
+    爬取一个城市的相关数据
+    :param departure: 出发地，默认成都
+    :return: 无
+    """
+    # 从断点加载
+    date, i = load_point()
+
     # 城市列表
     with open('../data/cities.json') as f:
         cities = list(set([c['code'] for c in json.load(f)['inLandData']['inlandHot']]))
         cities.sort()
 
-    # 从成都出发或返回成都
-    departure = 'CTU'
-
-    date, i = load_point()
     # 日期列表
     date_list = [datetime.strftime(datetime.strptime(date, '%Y-%m-%d') + timedelta(i), '%Y-%m-%d')
                  for i in range(120)]
@@ -219,7 +223,7 @@ def main():
             while retry_count > 0:
                 try:
                     flights_return = request(cities[i], departure, d, proxy)
-                    with open('../data/flights.csv', 'a') as f:
+                    with open('../data/flights_ctu.csv', 'a') as f:
                         f.writelines(flights_return)
                 except IPBlockedException:
                     print('IP Blocked', i, cities[i], '-->', departure, d)
@@ -241,5 +245,54 @@ def main():
         i = 0
 
 
+def crawl_one_day(day='2020-07-07'):
+    """
+    爬取一天的数据
+    :param day: 日期
+    :return:
+    """
+    # 加载断点
+    i, j = load_point()
+
+    # 城市列表
+    with open('../data/cities.json') as f:
+        cities = list(set([c['code'] for c in json.load(f)['inLandData']['inlandCity']]))
+        cities.sort()
+
+    exception = 0
+    while i < len(cities):
+        while j < len(cities):
+            if i == j:
+                j += 1
+                continue
+            retry_count = 1  # 重复1次
+            proxy = get_proxy().get("proxy")
+            while retry_count > 0:
+                try:
+                    flights = request(cities[i], cities[j], day, proxy)
+                    with open('../data/flights_day.csv', 'a') as f:
+                        f.writelines(flights)
+                except IPBlockedException:
+                    print('IP Blocked', i, cities[i], '-->', j, cities[j])
+                    retry_count -= 1
+                except:
+                    print('Other Error', i, cities[i], '-->', j, cities[j])
+                    retry_count -= 1
+                else:
+                    exception = 0
+                    j += 1
+                    break
+            if retry_count <= 0:
+                print('Delete proxy:', proxy)
+                delete_proxy(proxy)
+                exception += 1
+                if exception >= 5:
+                    save_point(i, j)
+                    return
+        j = 0
+        i += 1
+
+
 if __name__ == '__main__':
-    main()
+    # crawl_one_city()
+    crawl_one_day()
