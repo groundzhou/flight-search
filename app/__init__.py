@@ -7,12 +7,13 @@ def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY='dev',
-        DATABASE=os.path.join(app.instance_path, 'flight.db')
+        DATABASE=os.path.join(app.instance_path, 'flight.db'),
+        JSON_AS_ASCII=False
     )
 
     if not test_config:
         # load the instance config, if exists, when not testing
-        app.config.from_pyfile('dev_config.py', silent=True)
+        app.config.from_pyfile('config.py', silent=True)
     else:
         # load the test config if passed in
         app.config.from_mapping(test_config)
@@ -33,6 +34,10 @@ def create_app(test_config=None):
         return app.send_static_file('index.html')
 
     # register blueprints
+    from .api import flights
+    app.register_blueprint(flights.bp)
+    from .api import cities
+    app.register_blueprint(cities.bp)
 
     # 解决跨域问题
     app.after_request(cors)
