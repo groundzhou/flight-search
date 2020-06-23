@@ -1,0 +1,1346 @@
+{
+  "inLandData": {
+    "inlandHot": [
+      {
+        "name": "北京",
+        "code": "BJS",
+        "timezone": "480",
+        "desc": ""
+      },
+      {
+        "name": "上海",
+        "code": "SHA",
+        "timezone": "480",
+        "desc": ""
+      },
+      {
+        "name": "成都",
+        "code": "CTU",
+        "timezone": "480",
+        "desc": ""
+      },
+      {
+        "name": "广州",
+        "code": "CAN",
+        "timezone": "480",
+        "desc": ""
+      },
+      {
+        "name": "重庆",
+        "code": "CKG",
+        "timezone": "480",
+        "desc": ""
+      },
+      {
+        "name": "西安",
+        "code": "SIA",
+        "timezone": "480",
+        "desc": ""
+      },
+      {
+        "name": "昆明",
+        "code": "KMG",
+        "timezone": "480",
+        "desc": ""
+      },
+      {
+        "name": "深圳",
+        "code": "SZX",
+        "timezone": "480",
+        "desc": ""
+      },
+      {
+        "name": "郑州",
+        "code": "CGO",
+        "timezone": "480",
+        "desc": ""
+      },
+      {
+        "name": "哈尔滨",
+        "code": "HRB",
+        "timezone": "480",
+        "desc": ""
+      },
+      {
+        "name": "海口",
+        "code": "HAK",
+        "timezone": "480",
+        "desc": ""
+      },
+      {
+        "name": "杭州",
+        "code": "HGH",
+        "timezone": "480",
+        "desc": ""
+      },
+      {
+        "name": "三亚",
+        "code": "SYX",
+        "timezone": "480",
+        "desc": ""
+      },
+      {
+        "name": "乌鲁木齐",
+        "code": "URC",
+        "timezone": "480",
+        "desc": ""
+      },
+      {
+        "name": "青岛",
+        "code": "TAO",
+        "timezone": "480",
+        "desc": ""
+      },
+      {
+        "name": "南京",
+        "code": "NKG",
+        "timezone": "480",
+        "desc": ""
+      },
+      {
+        "name": "天津",
+        "code": "TSN",
+        "timezone": "480",
+        "desc": ""
+      },
+      {
+        "name": "贵阳",
+        "code": "KWE",
+        "timezone": "480",
+        "desc": ""
+      },
+      {
+        "name": "沈阳",
+        "code": "SHE",
+        "timezone": "480",
+        "desc": ""
+      },
+      {
+        "name": "厦门",
+        "code": "XMN",
+        "timezone": "480",
+        "desc": ""
+      }
+    ],
+    "inlandCity": [
+      {
+        "code": "BJS",
+        "initial": "B",
+        "name": "北京",
+        "portCode": "PEK"
+      },
+      {
+        "code": "SHA",
+        "initial": "S",
+        "name": "上海",
+        "portCode": "SHA"
+      },
+      {
+        "code": "CAN",
+        "initial": "G",
+        "name": "广州",
+        "portCode": "CAN"
+      },
+      {
+        "code": "SZX",
+        "initial": "S",
+        "name": "深圳",
+        "portCode": "SZX"
+      },
+      {
+        "code": "CTU",
+        "initial": "C",
+        "name": "成都",
+        "portCode": "CTU"
+      },
+      {
+        "code": "HGH",
+        "initial": "H",
+        "name": "杭州",
+        "portCode": "HGH"
+      },
+      {
+        "code": "WUH",
+        "initial": "W",
+        "name": "武汉",
+        "portCode": "WUH"
+      },
+      {
+        "code": "SIA",
+        "initial": "X",
+        "name": "西安",
+        "portCode": "XIY"
+      },
+      {
+        "code": "CKG",
+        "initial": "C",
+        "name": "重庆",
+        "portCode": "CKG"
+      },
+      {
+        "code": "TAO",
+        "initial": "Q",
+        "name": "青岛",
+        "portCode": "TAO"
+      },
+      {
+        "code": "CSX",
+        "initial": "C",
+        "name": "长沙",
+        "portCode": "CSX"
+      },
+      {
+        "code": "NKG",
+        "initial": "N",
+        "name": "南京",
+        "portCode": "NKG"
+      },
+      {
+        "code": "XMN",
+        "initial": "X",
+        "name": "厦门",
+        "portCode": "XMN"
+      },
+      {
+        "code": "KMG",
+        "initial": "K",
+        "name": "昆明",
+        "portCode": "KMG"
+      },
+      {
+        "code": "DLC",
+        "initial": "D",
+        "name": "大连",
+        "portCode": "DLC"
+      },
+      {
+        "code": "TSN",
+        "initial": "T",
+        "name": "天津",
+        "portCode": "TSN"
+      },
+      {
+        "code": "CGO",
+        "initial": "Z",
+        "name": "郑州",
+        "portCode": "CGO"
+      },
+      {
+        "code": "SYX",
+        "initial": "S",
+        "name": "三亚",
+        "portCode": "SYX"
+      },
+      {
+        "code": "TNA",
+        "initial": "J",
+        "name": "济南",
+        "portCode": "TNA"
+      },
+      {
+        "code": "FOC",
+        "initial": "F",
+        "name": "福州",
+        "portCode": "FOC"
+      },
+      {
+        "code": "HPG",
+        "initial": "S",
+        "name": "神农架",
+        "portCode": "HPG"
+      },
+      {
+        "code": "YIE",
+        "initial": "A",
+        "name": "阿尔山",
+        "portCode": "YIE"
+      },
+      {
+        "code": "AKU",
+        "initial": "A",
+        "name": "阿克苏",
+        "portCode": "AKU"
+      },
+      {
+        "code": "RHT",
+        "initial": "A",
+        "name": "阿拉善右旗",
+        "portCode": "RHT"
+      },
+      {
+        "code": "AXF",
+        "initial": "A",
+        "name": "阿拉善左旗",
+        "portCode": "AXF"
+      },
+      {
+        "code": "AAT",
+        "initial": "A",
+        "name": "阿勒泰",
+        "portCode": "AAT"
+      },
+      {
+        "code": "NGQ",
+        "initial": "A",
+        "name": "阿里",
+        "portCode": "NGQ"
+      },
+      {
+        "code": "AKA",
+        "initial": "A",
+        "name": "安康",
+        "portCode": "AKA"
+      },
+      {
+        "code": "AQG",
+        "initial": "A",
+        "name": "安庆",
+        "portCode": "AQG"
+      },
+      {
+        "code": "AVA",
+        "initial": "A",
+        "name": "安顺",
+        "portCode": "AVA"
+      },
+      {
+        "code": "AOG",
+        "initial": "A",
+        "name": "鞍山",
+        "portCode": "AOG"
+      },
+      {
+        "code": "RLK",
+        "initial": "B",
+        "name": "巴彦淖尔",
+        "portCode": "RLK"
+      },
+      {
+        "code": "AEB",
+        "initial": "B",
+        "name": "百色",
+        "portCode": "AEB"
+      },
+      {
+        "code": "BSD",
+        "initial": "B",
+        "name": "保山",
+        "portCode": "BSD"
+      },
+      {
+        "code": "BAV",
+        "initial": "B",
+        "name": "包头",
+        "portCode": "BAV"
+      },
+      {
+        "code": "BHY",
+        "initial": "B",
+        "name": "北海",
+        "portCode": "BHY"
+      },
+      {
+        "code": "BFJ",
+        "initial": "B",
+        "name": "毕节",
+        "portCode": "BFJ"
+      },
+      {
+        "code": "BPL",
+        "initial": "B",
+        "name": "博乐",
+        "portCode": "BPL"
+      },
+      {
+        "code": "NBS",
+        "initial": "C",
+        "name": "长白山",
+        "portCode": "NBS"
+      },
+      {
+        "code": "CGQ",
+        "initial": "C",
+        "name": "长春",
+        "portCode": "CGQ"
+      },
+      {
+        "code": "CIH",
+        "initial": "C",
+        "name": "长治",
+        "portCode": "CIH"
+      },
+      {
+        "code": "CGD",
+        "initial": "C",
+        "name": "常德",
+        "portCode": "CGD"
+      },
+      {
+        "code": "CZX",
+        "initial": "C",
+        "name": "常州",
+        "portCode": "CZX"
+      },
+      {
+        "code": "BPX",
+        "initial": "C",
+        "name": "昌都",
+        "portCode": "BPX"
+      },
+      {
+        "code": "CHG",
+        "initial": "C",
+        "name": "朝阳",
+        "portCode": "CHG"
+      },
+      {
+        "code": "CIF",
+        "initial": "C",
+        "name": "赤峰",
+        "portCode": "CIF"
+      },
+      {
+        "code": "DLU",
+        "initial": "D",
+        "name": "大理",
+        "portCode": "DLU"
+      },
+      {
+        "code": "DQA",
+        "initial": "D",
+        "name": "大庆",
+        "portCode": "DQA"
+      },
+      {
+        "code": "DAT",
+        "initial": "D",
+        "name": "大同",
+        "portCode": "DAT"
+      },
+      {
+        "code": "DAX",
+        "initial": "D",
+        "name": "达县",
+        "portCode": "DAX"
+      },
+      {
+        "code": "DDG",
+        "initial": "D",
+        "name": "丹东",
+        "portCode": "DDG"
+      },
+      {
+        "code": "DCY",
+        "initial": "D",
+        "name": "稻城",
+        "portCode": "DCY"
+      },
+      {
+        "code": "LUM",
+        "initial": "D",
+        "name": "德宏",
+        "portCode": "LUM"
+      },
+      {
+        "code": "DIG",
+        "initial": "D",
+        "name": "迪庆",
+        "portCode": "DIG"
+      },
+      {
+        "code": "DOY",
+        "initial": "D",
+        "name": "东营",
+        "portCode": "DOY"
+      },
+      {
+        "code": "DNH",
+        "initial": "D",
+        "name": "敦煌",
+        "portCode": "DNH"
+      },
+      {
+        "code": "EJN",
+        "initial": "E",
+        "name": "额济纳旗",
+        "portCode": "EJN"
+      },
+      {
+        "code": "DSN",
+        "initial": "E",
+        "name": "鄂尔多斯",
+        "portCode": "DSN"
+      },
+      {
+        "code": "ENH",
+        "initial": "E",
+        "name": "恩施",
+        "portCode": "ENH"
+      },
+      {
+        "code": "ERL",
+        "initial": "E",
+        "name": "二连浩特",
+        "portCode": "ERL"
+      },
+      {
+        "code": "FUO",
+        "initial": "F",
+        "name": "佛山",
+        "portCode": "FUO"
+      },
+      {
+        "code": "FUG",
+        "initial": "F",
+        "name": "阜阳",
+        "portCode": "FUG"
+      },
+      {
+        "code": "KOW",
+        "initial": "G",
+        "name": "赣州",
+        "portCode": "KOW"
+      },
+      {
+        "code": "GOQ",
+        "initial": "G",
+        "name": "格尔木",
+        "portCode": "GOQ"
+      },
+      {
+        "code": "GYU",
+        "initial": "G",
+        "name": "固原",
+        "portCode": "GYU"
+      },
+      {
+        "code": "GHN",
+        "initial": "G",
+        "name": "广汉",
+        "portCode": "GHN"
+      },
+      {
+        "code": "GYS",
+        "initial": "G",
+        "name": "广元",
+        "portCode": "GYS"
+      },
+      {
+        "code": "LHK",
+        "initial": "G",
+        "name": "光化",
+        "portCode": "LHK"
+      },
+      {
+        "code": "KWE",
+        "initial": "G",
+        "name": "贵阳",
+        "portCode": "KWE"
+      },
+      {
+        "code": "KWL",
+        "initial": "G",
+        "name": "桂林",
+        "portCode": "KWL"
+      },
+      {
+        "code": "HRB",
+        "initial": "H",
+        "name": "哈尔滨",
+        "portCode": "HRB"
+      },
+      {
+        "code": "HMI",
+        "initial": "H",
+        "name": "哈密",
+        "portCode": "HMI"
+      },
+      {
+        "code": "HAK",
+        "initial": "H",
+        "name": "海口",
+        "portCode": "HAK"
+      },
+      {
+        "code": "HLD",
+        "initial": "H",
+        "name": "海拉尔",
+        "portCode": "HLD"
+      },
+      {
+        "code": "HDG",
+        "initial": "H",
+        "name": "邯郸",
+        "portCode": "HDG"
+      },
+      {
+        "code": "HZG",
+        "initial": "H",
+        "name": "汉中",
+        "portCode": "HZG"
+      },
+      {
+        "code": "HFE",
+        "initial": "H",
+        "name": "合肥",
+        "portCode": "HFE"
+      },
+      {
+        "code": "HTN",
+        "initial": "H",
+        "name": "和田",
+        "portCode": "HTN"
+      },
+      {
+        "code": "HEK",
+        "initial": "H",
+        "name": "黑河",
+        "portCode": "HEK"
+      },
+      {
+        "code": "HET",
+        "initial": "H",
+        "name": "呼和浩特",
+        "portCode": "HET"
+      },
+      {
+        "code": "HJJ",
+        "initial": "H",
+        "name": "怀化",
+        "portCode": "HJJ"
+      },
+      {
+        "code": "HIA",
+        "initial": "H",
+        "name": "淮安",
+        "portCode": "HIA"
+      },
+      {
+        "code": "TXN",
+        "initial": "H",
+        "name": "黄山",
+        "portCode": "TXN"
+      },
+      {
+        "code": "HCJ",
+        "initial": "H",
+        "name": "河池",
+        "portCode": "HCJ"
+      },
+      {
+        "code": "AHJ",
+        "initial": "H",
+        "name": "红原",
+        "portCode": "AHJ"
+      },
+      {
+        "code": "HYN",
+        "initial": "H",
+        "name": "黄岩",
+        "portCode": "HYN"
+      },
+      {
+        "code": "JNG",
+        "initial": "J",
+        "name": "济宁",
+        "portCode": "JNG"
+      },
+      {
+        "code": "JIL",
+        "initial": "J",
+        "name": "吉林",
+        "portCode": "JIL"
+      },
+      {
+        "code": "JXA",
+        "initial": "J",
+        "name": "鸡西",
+        "portCode": "JXA"
+      },
+      {
+        "code": "JGD",
+        "initial": "J",
+        "name": "加格达奇",
+        "portCode": "JGD"
+      },
+      {
+        "code": "JMU",
+        "initial": "J",
+        "name": "佳木斯",
+        "portCode": "JMU"
+      },
+      {
+        "code": "JGN",
+        "initial": "J",
+        "name": "嘉峪关",
+        "portCode": "JGN"
+      },
+      {
+        "code": "SWA",
+        "initial": "J",
+        "name": "揭阳",
+        "portCode": "SWA"
+      },
+      {
+        "code": "JIC",
+        "initial": "J",
+        "name": "金昌",
+        "portCode": "JIC"
+      },
+      {
+        "code": "JJN",
+        "initial": "J",
+        "name": "晋江",
+        "portCode": "JJN"
+      },
+      {
+        "code": "JNZ",
+        "initial": "J",
+        "name": "锦州",
+        "portCode": "JNZ"
+      },
+      {
+        "code": "JDZ",
+        "initial": "J",
+        "name": "景德镇",
+        "portCode": "JDZ"
+      },
+      {
+        "code": "JHG",
+        "initial": "J",
+        "name": "景洪",
+        "portCode": "JHG"
+      },
+      {
+        "code": "JGS",
+        "initial": "J",
+        "name": "井冈山",
+        "portCode": "JGS"
+      },
+      {
+        "code": "JUH",
+        "initial": "C",
+        "name": "池州",
+        "portCode": "JUH"
+      },
+      {
+        "code": "JIU",
+        "initial": "J",
+        "name": "九江",
+        "portCode": "JIU"
+      },
+      {
+        "code": "JZH",
+        "initial": "J",
+        "name": "九寨沟",
+        "portCode": "JZH"
+      },
+      {
+        "code": "KJI",
+        "initial": "K",
+        "name": "喀纳斯",
+        "portCode": "KJI"
+      },
+      {
+        "code": "KHG",
+        "initial": "K",
+        "name": "喀什",
+        "portCode": "KHG"
+      },
+      {
+        "code": "KJH",
+        "initial": "K",
+        "name": "凯里",
+        "portCode": "KJH"
+      },
+      {
+        "code": "KGT",
+        "initial": "K",
+        "name": "康定",
+        "portCode": "KGT"
+      },
+      {
+        "code": "KRY",
+        "initial": "K",
+        "name": "克拉玛依",
+        "portCode": "KRY"
+      },
+      {
+        "code": "KCA",
+        "initial": "K",
+        "name": "库车",
+        "portCode": "KCA"
+      },
+      {
+        "code": "KRL",
+        "initial": "K",
+        "name": "库尔勒",
+        "portCode": "KRL"
+      },
+      {
+        "code": "LXA",
+        "initial": "L",
+        "name": "拉萨",
+        "portCode": "LXA"
+      },
+      {
+        "code": "LHW",
+        "initial": "L",
+        "name": "兰州",
+        "portCode": "LHW"
+      },
+      {
+        "code": "LLB",
+        "initial": "L",
+        "name": "荔波",
+        "portCode": "LLB"
+      },
+      {
+        "code": "LJG",
+        "initial": "L",
+        "name": "丽江",
+        "portCode": "LJG"
+      },
+      {
+        "code": "HZH",
+        "initial": "L",
+        "name": "黎平",
+        "portCode": "HZH"
+      },
+      {
+        "code": "LCX",
+        "initial": "L",
+        "name": "连城",
+        "portCode": "LCX"
+      },
+      {
+        "code": "LYG",
+        "initial": "L",
+        "name": "连云港",
+        "portCode": "LYG"
+      },
+      {
+        "code": "LIA",
+        "initial": "L",
+        "name": "梁平",
+        "portCode": "LIA"
+      },
+      {
+        "code": "LNJ",
+        "initial": "L",
+        "name": "临沧",
+        "portCode": "LNJ"
+      },
+      {
+        "code": "LYI",
+        "initial": "L",
+        "name": "临沂",
+        "portCode": "LYI"
+      },
+      {
+        "code": "LXI",
+        "initial": "L",
+        "name": "林西",
+        "portCode": "LXI"
+      },
+      {
+        "code": "LZY",
+        "initial": "L",
+        "name": "林芝",
+        "portCode": "LZY"
+      },
+      {
+        "code": "LZH",
+        "initial": "L",
+        "name": "柳州",
+        "portCode": "LZH"
+      },
+      {
+        "code": "LZO",
+        "initial": "L",
+        "name": "泸州",
+        "portCode": "LZO"
+      },
+      {
+        "code": "LLV",
+        "initial": "L",
+        "name": "吕梁",
+        "portCode": "LLV"
+      },
+      {
+        "code": "LYA",
+        "initial": "L",
+        "name": "洛阳",
+        "portCode": "LYA"
+      },
+      {
+        "code": "NZH",
+        "initial": "M",
+        "name": "满洲里",
+        "portCode": "NZH"
+      },
+      {
+        "code": "MXZ",
+        "initial": "M",
+        "name": "梅县",
+        "portCode": "MXZ"
+      },
+      {
+        "code": "MIG",
+        "initial": "M",
+        "name": "绵阳",
+        "portCode": "MIG"
+      },
+      {
+        "code": "OHE",
+        "initial": "M",
+        "name": "漠河",
+        "portCode": "OHE"
+      },
+      {
+        "code": "MDG",
+        "initial": "M",
+        "name": "牡丹江",
+        "portCode": "MDG"
+      },
+      {
+        "code": "NLT",
+        "initial": "N",
+        "name": "那拉提",
+        "portCode": "NLT"
+      },
+      {
+        "code": "KHN",
+        "initial": "N",
+        "name": "南昌",
+        "portCode": "KHN"
+      },
+      {
+        "code": "NAO",
+        "initial": "N",
+        "name": "南充",
+        "portCode": "NAO"
+      },
+      {
+        "code": "NNG",
+        "initial": "N",
+        "name": "南宁",
+        "portCode": "NNG"
+      },
+      {
+        "code": "NTG",
+        "initial": "N",
+        "name": "南通",
+        "portCode": "NTG"
+      },
+      {
+        "code": "NNY",
+        "initial": "N",
+        "name": "南阳",
+        "portCode": "NNY"
+      },
+      {
+        "code": "NGB",
+        "initial": "N",
+        "name": "宁波",
+        "portCode": "NGB"
+      },
+      {
+        "code": "PZI",
+        "initial": "P",
+        "name": "攀枝花",
+        "portCode": "PZI"
+      },
+      {
+        "code": "SYM",
+        "initial": "P",
+        "name": "普洱",
+        "portCode": "SYM"
+      },
+      {
+        "code": "HSN",
+        "initial": "P",
+        "name": "普陀山",
+        "portCode": "HSN"
+      },
+      {
+        "code": "NDG",
+        "initial": "Q",
+        "name": "齐齐哈尔",
+        "portCode": "NDG"
+      },
+      {
+        "code": "JIQ",
+        "initial": "Q",
+        "name": "黔江",
+        "portCode": "JIQ"
+      },
+      {
+        "code": "IQM",
+        "initial": "Q",
+        "name": "且末",
+        "portCode": "IQM"
+      },
+      {
+        "code": "BPE",
+        "initial": "Q",
+        "name": "秦皇岛",
+        "portCode": "BPE"
+      },
+      {
+        "code": "IQN",
+        "initial": "Q",
+        "name": "庆阳",
+        "portCode": "IQN"
+      },
+      {
+        "code": "JUZ",
+        "initial": "Q",
+        "name": "衢州",
+        "portCode": "JUZ"
+      },
+      {
+        "code": "RKZ",
+        "initial": "R",
+        "name": "日喀则",
+        "portCode": "RKZ"
+      },
+      {
+        "code": "SHS",
+        "initial": "S",
+        "name": "沙市",
+        "portCode": "SHS"
+      },
+      {
+        "code": "SHE",
+        "initial": "S",
+        "name": "沈阳",
+        "portCode": "SHE"
+      },
+      {
+        "code": "SJW",
+        "initial": "S",
+        "name": "石家庄",
+        "portCode": "SJW"
+      },
+      {
+        "code": "TCG",
+        "initial": "T",
+        "name": "塔城",
+        "portCode": "TCG"
+      },
+      {
+        "code": "TNH",
+        "initial": "T",
+        "name": "通化",
+        "portCode": "TNH"
+      },
+      {
+        "code": "TYN",
+        "initial": "T",
+        "name": "太原",
+        "portCode": "TYN"
+      },
+      {
+        "code": "TVS",
+        "initial": "T",
+        "name": "唐山",
+        "portCode": "TVS"
+      },
+      {
+        "code": "TCZ",
+        "initial": "T",
+        "name": "腾冲",
+        "portCode": "TCZ"
+      },
+      {
+        "code": "THQ",
+        "initial": "T",
+        "name": "天水",
+        "portCode": "THQ"
+      },
+      {
+        "code": "TGO",
+        "initial": "T",
+        "name": "通辽",
+        "portCode": "TGO"
+      },
+      {
+        "code": "TEN",
+        "initial": "T",
+        "name": "铜仁",
+        "portCode": "TEN"
+      },
+      {
+        "code": "TLQ",
+        "initial": "T",
+        "name": "吐鲁番",
+        "portCode": "TLQ"
+      },
+      {
+        "code": "WXN",
+        "initial": "W",
+        "name": "万州",
+        "portCode": "WXN"
+      },
+      {
+        "code": "WEH",
+        "initial": "W",
+        "name": "威海",
+        "portCode": "WEH"
+      },
+      {
+        "code": "WEF",
+        "initial": "W",
+        "name": "潍坊",
+        "portCode": "WEF"
+      },
+      {
+        "code": "WNH",
+        "initial": "W",
+        "name": "文山",
+        "portCode": "WNH"
+      },
+      {
+        "code": "WNZ",
+        "initial": "W",
+        "name": "温州",
+        "portCode": "WNZ"
+      },
+      {
+        "code": "WUA",
+        "initial": "W",
+        "name": "乌海",
+        "portCode": "WUA"
+      },
+      {
+        "code": "HLH",
+        "initial": "W",
+        "name": "乌兰浩特",
+        "portCode": "HLH"
+      },
+      {
+        "code": "URC",
+        "initial": "W",
+        "name": "乌鲁木齐",
+        "portCode": "URC"
+      },
+      {
+        "code": "WUS",
+        "initial": "W",
+        "name": "武夷山",
+        "portCode": "WUS"
+      },
+      {
+        "code": "WUX",
+        "initial": "W",
+        "name": "无锡",
+        "portCode": "WUX"
+      },
+      {
+        "code": "WUZ",
+        "initial": "W",
+        "name": "梧州",
+        "portCode": "WUZ"
+      },
+      {
+        "code": "XIC",
+        "initial": "X",
+        "name": "西昌",
+        "portCode": "XIC"
+      },
+      {
+        "code": "XNN",
+        "initial": "X",
+        "name": "西宁",
+        "portCode": "XNN"
+      },
+      {
+        "code": "XIL",
+        "initial": "X",
+        "name": "锡林浩特",
+        "portCode": "XIL"
+      },
+      {
+        "code": "GXH",
+        "initial": "X",
+        "name": "夏河",
+        "portCode": "GXH"
+      },
+      {
+        "code": "XFN",
+        "initial": "X",
+        "name": "襄樊",
+        "portCode": "XFN"
+      },
+      {
+        "code": "ACX",
+        "initial": "X",
+        "name": "兴义",
+        "portCode": "ACX"
+      },
+      {
+        "code": "XUZ",
+        "initial": "X",
+        "name": "徐州",
+        "portCode": "XUZ"
+      },
+      {
+        "code": "ENY",
+        "initial": "Y",
+        "name": "延安",
+        "portCode": "ENY"
+      },
+      {
+        "code": "YNJ",
+        "initial": "Y",
+        "name": "延吉",
+        "portCode": "YNJ"
+      },
+      {
+        "code": "YNZ",
+        "initial": "Y",
+        "name": "盐城",
+        "portCode": "YNZ"
+      },
+      {
+        "code": "YNT",
+        "initial": "Y",
+        "name": "烟台",
+        "portCode": "YNT"
+      },
+      {
+        "code": "YTY",
+        "initial": "Y",
+        "name": "扬州",
+        "portCode": "YTY"
+      },
+      {
+        "code": "LDS",
+        "initial": "Y",
+        "name": "伊春",
+        "portCode": "LDS"
+      },
+      {
+        "code": "YIN",
+        "initial": "Y",
+        "name": "伊犁",
+        "portCode": "YIN"
+      },
+      {
+        "code": "YBP",
+        "initial": "Y",
+        "name": "宜宾",
+        "portCode": "YBP"
+      },
+      {
+        "code": "YIH",
+        "initial": "Y",
+        "name": "宜昌",
+        "portCode": "YIH"
+      },
+      {
+        "code": "YIC",
+        "initial": "Y",
+        "name": "宜春",
+        "portCode": "YIC"
+      },
+      {
+        "code": "YIW",
+        "initial": "Y",
+        "name": "义乌",
+        "portCode": "YIW"
+      },
+      {
+        "code": "INC",
+        "initial": "Y",
+        "name": "银川",
+        "portCode": "INC"
+      },
+      {
+        "code": "LLF",
+        "initial": "Y",
+        "name": "永州",
+        "portCode": "LLF"
+      },
+      {
+        "code": "UYN",
+        "initial": "Y",
+        "name": "榆林",
+        "portCode": "UYN"
+      },
+      {
+        "code": "YUS",
+        "initial": "Y",
+        "name": "玉树",
+        "portCode": "YUS"
+      },
+      {
+        "code": "YCU",
+        "initial": "Y",
+        "name": "运城",
+        "portCode": "YCU"
+      },
+      {
+        "code": "ZHA",
+        "initial": "Z",
+        "name": "湛江",
+        "portCode": "ZHA"
+      },
+      {
+        "code": "DYG",
+        "initial": "Z",
+        "name": "张家界",
+        "portCode": "DYG"
+      },
+      {
+        "code": "ZQZ",
+        "initial": "Z",
+        "name": "张家口",
+        "portCode": "ZQZ"
+      },
+      {
+        "code": "YZY",
+        "initial": "Z",
+        "name": "张掖",
+        "portCode": "YZY"
+      },
+      {
+        "code": "ZAT",
+        "initial": "Z",
+        "name": "昭通",
+        "portCode": "ZAT"
+      },
+      {
+        "code": "ZGN",
+        "initial": "Z",
+        "name": "中山",
+        "portCode": "ZGN"
+      },
+      {
+        "code": "ZHY",
+        "initial": "Z",
+        "name": "中卫",
+        "portCode": "ZHY"
+      },
+      {
+        "code": "ZUH",
+        "initial": "Z",
+        "name": "珠海",
+        "portCode": "ZUH"
+      },
+      {
+        "code": "ZYI",
+        "initial": "Z",
+        "name": "遵义",
+        "portCode": "ZYI"
+      },
+      {
+        "code": "HNY",
+        "initial": "H",
+        "name": "衡阳",
+        "portCode": "HNY"
+      }
+    ]
+  }
+}
