@@ -31,7 +31,7 @@ def close_db(e=None):
 def init_db():
     db = get_db()
     with db.cursor() as cursor:
-        with current_app.open_resource('../scripts/schema.sql') as f:
+        with current_app.open_resource('../scripts/ads.sql') as f:
             cursor.executemany(f.read().decode('utf8'), [])
     db.commit()
 
