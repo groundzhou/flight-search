@@ -208,3 +208,26 @@ group by dcity_code, acity_code, ddate, flight_2;
 
 DROP TABLE flight_joint_1;
 DROP TABLE flight_joint_2;
+
+-- 城市机场位置
+DROP TABLE IF EXISTS city_airport;
+CREATE TABLE city_airport
+(
+    city_code    VARCHAR(3),
+    city_name    VARCHAR(100),
+    airport_code VARCHAR(3) PRIMARY KEY,
+    airport_name VARCHAR(100),
+    latitude     DOUBLE,
+    longitude    DOUBLE
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4;
+
+insert into city_airport
+select f.dcity_code,
+       f.dcity,
+       f.dairport_code,
+       f.dairport,
+       a.latitude,
+       a.longitude
+from (select distinct dairport_code, dairport, dcity_code, dcity from flight) f
+         LEFT JOIN airport a ON f.dairport_code = a.iata;
