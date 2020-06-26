@@ -133,3 +133,4 @@ dmypy.json
 
 uwsgi.ini
 data/
+deploy.sh
