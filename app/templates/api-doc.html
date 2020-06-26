@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>API Doc</title>
+</head>
+<body>
+<div>
+    <h1>API List</h1>
+    <ul>
+        {% for url in urls %}
+        <li style="height: 35px;font-size: 20px"><a href="{{ url.rule }}">{{ url.rule }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+<div>
+    <h1>Example</h1>
+    <div style="font-size: 20px">8月8日成都到北京的航班：
+        <a href="/api/flights?d=CTU&a=BJS&date=2020-08-08">/api/flights?d=CTU&a=BJS&date=2020-08-08</a>
+    </div>
+    <div style="font-size: 20px">7月7日成都到北京、价格不超过800、南航和海航的航班：
+        <a href="/api/flights?d=CTU&a=BJS&date=2020-07-07&airline=南航;海航&max=800">/api/flights?d=CTU&a=BJS&date=2020-07-07&airline=南航;海航&max=800</a>
+    </div>
+    <div style="font-size: 20px">7月7日成都到北京的航班，按时长排序：
+        <a href="/api/flights?d=CTU&a=BJS&date=2020-07-07&order=time">/api/flights?d=CTU&a=BJS&date=2020-07-07&order=time</a>
+    </div>
+    <div style="font-size: 20px">航班查询字段：
+        <ul>
+            <li>d：出发地三字码</li>
+            <li>a：到达地三字码</li>
+            <li>date：日期</li>
+            <li>max：最大价格</li>
+            <li>airline：航空公司筛选，多个用分号隔开</li>
+            <li>order：排序，可按价格（price，默认）、时长（time）、出发时间（dtime）、到达时间（atime）排序</li>
+        </ul>
+        nonstopFlight表示直达航班，但是stop=1说明会经停；transitFlight表示拼接航班，没有前缀表示第一段航程，f2前缀表示第二段航程。
+    </div>
+    <br>
+    <div style="font-size: 20px">7月6日从成都出发可到达的地方：
+        <a href="/api/destinations?d=CTU&date=2020-07-06">/api/destinations?d=CTU&date=2020-07-06</a>
+    </div>
+    <div style="font-size: 20px">成都到北京几个月内的票价：
+        <a href="/api/prices?d=CTU&a=BJS">/api/prices?d=CTU&a=BJS</a></div>
+</div>
+</body>
+</html>

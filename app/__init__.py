@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request
+from flask import Flask, request, render_template
 
 
 def create_app(test_config=None):
@@ -30,14 +30,20 @@ def create_app(test_config=None):
 
     # a simple page that test api
     @app.route('/')
-    def test():
-        return app.send_static_file('index.html')
+    @app.route('/api')
+    def api():
+        urls = []
+        for rule in app.url_map.iter_rules():
+            if rule.endpoint not in ['static', 'api']:
+                urls.append(rule)
+        return render_template('api-doc.html', urls=urls)
 
     # register blueprints
-    from .api import flights
+    from .api import flights, cities, destinations, prices
     app.register_blueprint(flights.bp)
-    from .api import cities
     app.register_blueprint(cities.bp)
+    app.register_blueprint(destinations.bp)
+    app.register_blueprint(prices.bp)
 
     # 解决跨域问题
     app.after_request(cors)
