@@ -4,7 +4,7 @@ from flask import Flask, request, render_template
 
 def create_app(test_config=None):
     # create and config the app
-    app = Flask(__name__, instance_relative_config=True)
+    app = Flask(__name__, instance_relative_config=True, static_url_path='')
     app.config.from_mapping(
         SECRET_KEY='dev',
         DATABASE=os.path.join(app.instance_path, 'flight.db'),
@@ -28,8 +28,12 @@ def create_app(test_config=None):
     from app import database
     database.init_app(app)
 
-    # a simple page that test api
+    # index page
     @app.route('/')
+    def index():
+        return app.send_static_file('index.html')
+
+    # api doc page
     @app.route('/api')
     def api():
         urls = []
