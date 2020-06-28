@@ -35,3 +35,19 @@ stop            经停（次数）
 ## 3. web应用模块（api）
 
 [查看API说明](http://192.168.101.83:5000/api)
+
+## 4. 运行环境
+
+### 4.1 运行环境
+
+- 操作系统：Ubuntu 18.04
+- 数据库：MySQL 5.7.30
+- Python 后端：Flask 1.1.2，PyMySQL 0.9.3
+
+# 4.2 爬虫
+
+- 爬虫：requests 2.20.0，ip池：[Python爬虫代理IP池(proxy pool)](https://github.com/jhao104/proxy_pool)
+
+# 4.3 数据处理
+
+- 数据处理：Hadoop 2.9.2，Hive 2.3.7，MySQL 5.7.30

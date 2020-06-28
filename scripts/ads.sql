@@ -194,17 +194,31 @@ FROM (SELECT dcity_code, acity_code, dtime, atime, id, price
       WHERE date(dtime) = '2020-07-07') f2
      ON f1.acity_code = f2.dcity_code AND
         f1.dcity_code != f2.acity_code AND
-        timediff(f2.dtime, f1.atime) BETWEEN '01:30:00' AND '4:00:00';
+        timediff(f2.dtime, f1.atime) BETWEEN '01:30:00' AND '04:00:00';
 
 INSERT INTO flight_joint_2 (dcity_code, acity_code, ddate, flight_1, flight_2, price)
-select dcity_code, acity_code, ddate, flight_1, min(flight_2), min(price)
-from flight_joint_1
-group by dcity_code, acity_code, ddate, flight_1;
+select f1.dcity_code, f1.acity_code, f1.ddate, f1.flight_1, f1.flight_2, f1.price
+from flight_joint_1 f1,
+     (select dcity_code, acity_code, ddate, flight_1, min(price) price
+      from flight_joint_1
+      group by dcity_code, acity_code, ddate, flight_1) f2
+where f1.dcity_code = f2.dcity_code
+  and f1.acity_code = f2.acity_code
+  and f1.ddate = f2.ddate
+  and f1.flight_1 = f2.flight_1
+  and f1.price = f2.price;
 
 INSERT INTO flight_joint (dcity_code, acity_code, ddate, flight_1, flight_2, price)
-select dcity_code, acity_code, ddate, min(flight_1), flight_2, min(price)
-from flight_joint_2
-group by dcity_code, acity_code, ddate, flight_2;
+select f1.dcity_code, f1.acity_code, f1.ddate, f1.flight_1, f1.flight_2, f1.price
+from flight_joint_2 f1,
+     (select dcity_code, acity_code, ddate, flight_2, min(price) price
+      from flight_joint_2
+      group by dcity_code, acity_code, ddate, flight_2) f2
+where f1.dcity_code = f2.dcity_code
+  and f1.acity_code = f2.acity_code
+  and f1.ddate = f2.ddate
+  and f1.flight_2 = f2.flight_2
+  and f1.price = f2.price;
 
 DROP TABLE flight_joint_1;
 DROP TABLE flight_joint_2;

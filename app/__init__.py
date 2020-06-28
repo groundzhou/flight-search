@@ -55,4 +55,5 @@ def cors(res):
     # 添加允许的请求头，解决跨域问题
     res.headers['Access-Control-Allow-Origin'] = request.headers.get('Origin', default='*')
     res.headers['Access-Control-Allow-Headers'] = 'x-requested-with,content-type'
+    res.headers["Access-Control-Allow-Credentials"] = 'true'
     return res
