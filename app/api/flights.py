@@ -82,7 +82,7 @@ LIMIT 5;'''
         airline = airline.split(';')
         result['nonstopFlight'] = [f for f in result['nonstopFlight'] if f['airline'] in airline]
         result['transitFlight'] = [f for f in result['transitFlight']
-                                   if f['airline'] in airline and f['f2.airline'] in airline]
+                                   if f['airline'] in airline or f['f2.airline'] in airline]
     if max_price:
         result['nonstopFlight'] = [f for f in result['nonstopFlight'] if f['price'] <= max_price]
         result['transitFlight'] = [f for f in result['transitFlight'] if f['price'] + f['f2.price'] <= max_price]

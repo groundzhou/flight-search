@@ -162,7 +162,7 @@
                             <div style="width: 200px; margin-left: 40px; margin-right: 40px;">
                                 是否中转
                                 <select id="transitFlight" name="transitFlight">
-                                    <option value="">全部</option>
+                                    <option value="2">全部</option>
                                     <option value="0">无中转</option>
                                     <option value="1">可中转</option>
                                 </select>
@@ -444,6 +444,9 @@
             if (transi == 1) {
                 getMessage_trasi();
             }
+            if (transi == 2) {
+                getMessage_notrasi();
+            }
         });
 
         $("#sort").change(function () {
@@ -458,6 +461,11 @@
 
         function getAirlines(data) {
             var airlines = document.getElementById("airlines");
+            airlines.innerHTML = "";
+
+            var option = document.createElement("option");
+            option.innerHTML = "<option value=''>全部</option>";
+            airlines.appendChild(option);
 
             data = data["airlines"];
             for (var i = 0; i < data.length; i++) {
@@ -472,6 +480,8 @@
         function getMessage(data) {
             var table = document.getElementById("result_table");
             table.innerHTML = ""; //删除table内容
+            var table2 = document.getElementById("result_table_2");
+            table2.innerHTML = ""; //删除table内容
 
             // 表头
             table.innerHTML =
@@ -486,38 +496,40 @@
                 "<td>机型<br>类型</td>" +
                 "</tr>";
 
-            data = data["nonstopFlight"];
-            for (var i = 0; i < data.length; i++) {
+            ndata = data["nonstopFlight"];
+            for (var i = 0; i < ndata.length; i++) {
                 var tr = document.createElement("tr");
 
                 tr.innerHTML =
-                    "<tr><td>" + data[i].flight_num + "<br>" + data[i].class + "</td>" +
-                    "<td>" + data[i].dcity + "→" + data[i].stop + "→" + data[i].acity + "<br>" +
-                    data[i].dairport + data[i].dterminal + "→" + data[i].stop + "→" + data[i].aairport + data[i].aterminal + "</td>" +
-                    "<td>" + data[i].dtime + "→" + data[i].atime + "<br>" + data[i].time[0] + "小时" + data[i].time[1] + "分钟" + "</td>" +
-                    "<td><font color='red'>￥" + data[i].price + "</font></td>" +
-                    "<td>" + data[i].discount + "</td>" +
-                    "<td>" + data[i].punctuality + "%</td>" +
-                    "<td>" + data[i].airline + "</td>" +
-                    "<td>" + data[i].plane + "<br>" + data[i].plane_kind + "</td></tr>";
+                    "<tr><td>" + ndata[i].flight_num + "<br>" + ndata[i].class + "</td>" +
+                    "<td>" + ndata[i].dcity + "→" + ndata[i].stop + "→" + ndata[i].acity + "<br>" +
+                    ndata[i].dairport + ndata[i].dterminal + "→" + ndata[i].stop + "→" + ndata[i].aairport + ndata[i].aterminal + "</td>" +
+                    "<td>" + ndata[i].dtime + "→" + ndata[i].atime + "<br>" + ndata[i].time[0] + "小时" + ndata[i].time[1] + "分钟" + "</td>" +
+                    "<td><font color='red'>￥" + ndata[i].price + "</font></td>" +
+                    "<td>" + ndata[i].discount + "</td>" +
+                    "<td>" + ndata[i].punctuality + "%</td>" +
+                    "<td>" + ndata[i].airline + "</td>" +
+                    "<td>" + ndata[i].plane + "<br>" + ndata[i].plane_kind + "</td></tr>";
 
                 table.appendChild(tr);
             }
 
-            data = data["transitFlight"];
-            for (var i = 0; i < data.length; i++) {
+            tdata = data["transitFlight"];
+            for (var i = 0; i < tdata.length; i++) {
                 var tr = document.createElement("tr");
+                // alert(tdata[i]['f2.flight_num']);
 
                 tr.innerHTML =
-                    "<tr><td>" + data[i].flight_num + "<br>" + data[i].class + "</td>" +
-                    "<td>" + data[i].dcity + "→" + data[i].stop + "→" + data[i].acity + "<br>" +
-                    data[i].dairport + data[i].dterminal + "→" + data[i].stop + "→" + data[i].aairport + data[i].aterminal + "</td>" +
-                    "<td>" + data[i].dtime + "→" + data[i].atime + "<br>" + data[i].time[0] + "小时" + data[i].time[1] + "分钟" + "</td>" +
-                    "<td><font color='red'>￥" + data[i].price + "</font></td>" +
-                    "<td>" + data[i].discount + "</td>" +
-                    "<td>" + data[i].punctuality + "%</td>" +
-                    "<td>" + data[i].airline + "</td>" +
-                    "<td>" + data[i].plane + "<br>" + data[i].plane_kind + "</td></tr>";
+                    "<tr><td>" + tdata[i].flight_num + "<br>" + tdata[i].class + "<br>" + tdata[i]['f2.flight_num'] + "<br>" + tdata[i]['f2.class'] + "</td>" +
+                    "<td>" + tdata[i].dcity + "→" + tdata[i].stop + "→" + tdata[i].acity + "<br>" +
+                    tdata[i].dairport + tdata[i].dterminal + "→" + tdata[i].stop + "→" + tdata[i].aairport + tdata[i].aterminal + "<br>" + tdata[i]['f2.dcity'] + "→" + tdata[i]['f2.stop'] + "→" + tdata[i]['f2.acity'] + "<br>" +
+                    tdata[i]['f2.dairport'] + tdata[i]['f2.dterminal'] + "→" + tdata[i]['f2.stop'] + "→" + tdata[i]['f2.aairport'] + tdata[i]['f2.aterminal'] + "</td>" +
+                    "<td>" + tdata[i].dtime + "→" + tdata[i].atime + "<br>停留" + tdata[i].stoptime[0] + "小时" + tdata[i].stoptime[1] + "分钟" + "<br>" + tdata[i]['f2.dtime'] + "→" + tdata[i]['f2.atime'] + "<br>总用时" + tdata[i].time[0] + "小时" + tdata[i].time[1] + "分钟" + "</td>" +
+                    "<td><font color='red'>￥" + tdata[i].price + "<br>￥" + tdata[i]['f2.price'] + "<br>合计￥" + (tdata[i].price + tdata[i]['f2.price']) + "</font></td>" +
+                    "<td>" + tdata[i].discount + "<br>" + tdata[i]['f2.discount'] + "</td>" +
+                    "<td>" + tdata[i].punctuality + "%<br>" + tdata[i]['f2.punctuality'] + "%</td>" +
+                    "<td>" + tdata[i].airline + "<br>" + tdata[i]['f2.airline'] + "</td>" +
+                    "<td>" + tdata[i].plane + "<br>" + tdata[i].plane_kind + "<br>" + tdata[i]['f2.plane'] + "<br>" + tdata[i]['f2.plane_kind'] + "</td></tr>";
 
                 table.appendChild(tr);
             }
@@ -527,7 +539,7 @@
 
         function getMessage_r(data) {
             var table = document.getElementById("result_table_2");
-
+            table.innerHTML = "";
             // 表头
             table.innerHTML =
                 "<tr bgcolor='#FFFF00'>" +
@@ -541,38 +553,39 @@
                 "<td>机型<br>类型</td>" +
                 "</tr>";
 
-            data = data["nonstopFlight"];
-            for (var i = 0; i < data.length; i++) {
+            ndata = data["nonstopFlight"];
+            for (var i = 0; i < ndata.length; i++) {
                 var tr = document.createElement("tr");
 
                 tr.innerHTML =
-                    "<tr><td>" + data[i].flight_num + "<br>" + data[i].class + "</td>" +
-                    "<td>" + data[i].dcity + "→" + data[i].stop + "→" + data[i].acity + "<br>" +
-                    data[i].dairport + data[i].dterminal + "→" + data[i].stop + "→" + data[i].aairport + data[i].aterminal + "</td>" +
-                    "<td>" + data[i].dtime + "→" + data[i].atime + "<br>" + data[i].time[0] + "小时" + data[i].time[1] + "分钟" + "</td>" +
-                    "<td><font color='red'>￥" + data[i].price + "</font></td>" +
-                    "<td>" + data[i].discount + "</td>" +
-                    "<td>" + data[i].punctuality + "%</td>" +
-                    "<td>" + data[i].airline + "</td>" +
-                    "<td>" + data[i].plane + "<br>" + data[i].plane_kind + "</td></tr>";
+                    "<tr><td>" + ndata[i].flight_num + "<br>" + ndata[i].class + "</td>" +
+                    "<td>" + ndata[i].dcity + "→" + ndata[i].stop + "→" + ndata[i].acity + "<br>" +
+                    ndata[i].dairport + ndata[i].dterminal + "→" + ndata[i].stop + "→" + ndata[i].aairport + ndata[i].aterminal + "</td>" +
+                    "<td>" + ndata[i].dtime + "→" + ndata[i].atime + "<br>" + ndata[i].time[0] + "小时" + ndata[i].time[1] + "分钟" + "</td>" +
+                    "<td><font color='red'>￥" + ndata[i].price + "</font></td>" +
+                    "<td>" + ndata[i].discount + "</td>" +
+                    "<td>" + ndata[i].punctuality + "%</td>" +
+                    "<td>" + ndata[i].airline + "</td>" +
+                    "<td>" + ndata[i].plane + "<br>" + ndata[i].plane_kind + "</td></tr>";
 
                 table.appendChild(tr);
             }
 
-            data = data["transitFlight"];
-            for (var i = 0; i < data.length; i++) {
+            tdata = data["transitFlight"];
+            for (var i = 0; i < tdata.length; i++) {
                 var tr = document.createElement("tr");
 
                 tr.innerHTML =
-                    "<tr><td>" + data[i].flight_num + "<br>" + data[i].class + "</td>" +
-                    "<td>" + data[i].dcity + "→" + data[i].stop + "→" + data[i].acity + "<br>" +
-                    data[i].dairport + data[i].dterminal + "→" + data[i].stop + "→" + data[i].aairport + data[i].aterminal + "</td>" +
-                    "<td>" + data[i].dtime + "→" + data[i].atime + "<br>" + data[i].time[0] + "小时" + data[i].time[1] + "分钟" + "</td>" +
-                    "<td><font color='red'>￥" + data[i].price + "</font></td>" +
-                    "<td>" + data[i].discount + "</td>" +
-                    "<td>" + data[i].punctuality + "%</td>" +
-                    "<td>" + data[i].airline + "</td>" +
-                    "<td>" + data[i].plane + "<br>" + data[i].plane_kind + "</td></tr>";
+                    "<tr><td>" + tdata[i].flight_num + "<br>" + tdata[i].class + "<br>" + tdata[i]['f2.flight_num'] + "<br>" + tdata[i]['f2.class'] + "</td>" +
+                    "<td>" + tdata[i].dcity + "→" + tdata[i].stop + "→" + tdata[i].acity + "<br>" +
+                    tdata[i].dairport + tdata[i].dterminal + "→" + tdata[i].stop + "→" + tdata[i].aairport + tdata[i].aterminal + "<br>" + tdata[i]['f2.dcity'] + "→" + tdata[i]['f2.stop'] + "→" + tdata[i]['f2.acity'] + "<br>" +
+                    tdata[i]['f2.dairport'] + tdata[i]['f2.dterminal'] + "→" + tdata[i]['f2.stop'] + "→" + tdata[i]['f2.aairport'] + tdata[i]['f2.aterminal'] + "</td>" +
+                    "<td>" + tdata[i].dtime + "→" + tdata[i].atime + "<br>停留" + tdata[i].stoptime[0] + "小时" + tdata[i].stoptime[1] + "分钟" + "<br>" + tdata[i]['f2.dtime'] + "→" + tdata[i]['f2.atime'] + "<br>总用时" + tdata[i].time[0] + "小时" + tdata[i].time[1] + "分钟" + "</td>" +
+                    "<td><font color='red'>￥" + tdata[i].price + "<br>￥" + tdata[i]['f2.price'] + "<br>合计￥" + (tdata[i].price + tdata[i]['f2.price']) + "</font></td>" +
+                    "<td>" + tdata[i].discount + "<br>" + tdata[i]['f2.discount'] + "</td>" +
+                    "<td>" + tdata[i].punctuality + "%<br>" + tdata[i]['f2.punctuality'] + "%</td>" +
+                    "<td>" + tdata[i].airline + "<br>" + tdata[i]['f2.airline'] + "</td>" +
+                    "<td>" + tdata[i].plane + "<br>" + tdata[i].plane_kind + "<br>" + tdata[i]['f2.plane'] + "<br>" + tdata[i]['f2.plane_kind'] + "</td></tr>";
 
                 table.appendChild(tr);
             }
@@ -581,6 +594,10 @@
         }
 
         function getMessage_air() {
+            if (airline === "全部") {
+                airline = null;
+            }
+
             $.ajax({
                 url: 'http://node2:5000/api/flights',
                 type: 'GET', //数据提交方式
@@ -749,6 +766,61 @@
             }
         }
 
+        function getMessage_notrasi() {
+            $.ajax({
+                url: 'http://node2:5000/api/flights',
+                type: 'GET', //数据提交方式
+                dataType: 'json', //返回的数据类型格式
+                async: true, //异步请求
+                crossDomain: true, //跨域访问
+                xhrFields: { //标准跨域请求不发送cookie
+                    withCredentials: true
+                },
+                data: {
+                    d: start_place,
+                    a: goal_place,
+                    date: start_time,
+                    airline: airline,
+                    max: price,
+                    order: sortElem
+                },
+                success: function (data) {
+                    getMessage(data);
+                },
+                error: function (errorMsg) {
+                    //请求失败时执行该函数
+                    // alert("fail");
+                }
+            });
+            if (way == 2) {
+                $.ajax({
+                    url: 'http://node2:5000/api/flights',
+                    type: 'GET', //数据提交方式
+                    dataType: 'json', //返回的数据类型格式
+                    async: true, //异步请求
+                    crossDomain: true, //跨域访问
+                    xhrFields: { //标准跨域请求不发送cookie
+                        withCredentials: true
+                    },
+                    data: {
+                        d: goal_place,
+                        a: start_place,
+                        date: return_time,
+                        airline: airline,
+                        max: price,
+                        order: sortElem
+                    },
+                    success: function (data) {
+                        getMessage_r(data);
+                    },
+                    error: function (errorMsg) {
+                        //请求失败时执行该函数
+                        // alert("fail");
+                    }
+                });
+            }
+        }
+
         function getMessage_price() {
             $.ajax({
                 url: 'http://node2:5000/api/flights',
@@ -864,7 +936,6 @@
             title.innerHTML = start_place_name + "--->" + goal_place_name;
 
             // 基于准备好的dom，初始化echarts实例
-            document.getElementById("container").innerHTML = "";
             var myChart = echarts.init(document.getElementById("container"));
 
             // 指定图表的配置项和数据
