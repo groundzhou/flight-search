@@ -14,7 +14,7 @@ def get_flights():
     destination = request.args.get('a', 'SIA')
     date = request.args.get('date', '2020-07-07')
     order = request.args.get('order', 'price')  # price, time, dtime, atime
-    order = 'atime-dtime' if order == 'time' else order
+    order = 'timediff(atime,dtime)' if order == 'time' else order
     airline = request.args.get('airline')
     max_price = request.args.get('max')
     max_price = int(max_price) if max_price else None
@@ -37,7 +37,7 @@ def get_flights():
         AND j.flight_2 = f2.id
     ORDER BY j.price;'''
 
-    sql3 = '''SELECT *
+    sql3 = '''SELECT f1.*, f2.*
 FROM flight_joint j,
      flight f1,
      flight f2,
@@ -67,7 +67,7 @@ LIMIT 5;'''
             cursor.execute(sql3, (departure, destination, date, departure, destination, date))
             result['transitFlight'] = cursor.fetchall()
 
-    time_format = '%Y-%m-%d %H:%M:%S'
+    time_format = '%Y-%m-%d %H:%M'
 
     # 航空公司信息
     airlines = []
@@ -79,13 +79,23 @@ LIMIT 5;'''
     result['airlines'] = list(set(airlines))
 
     if airline:
-        result['nonstopFlight'] = [f for f in result['nonstopFlight'] if f['airline'] in airline.split(';')]
+        airline = airline.split(';')
+        result['nonstopFlight'] = [f for f in result['nonstopFlight'] if f['airline'] in airline]
+        result['transitFlight'] = [f for f in result['transitFlight']
+                                   if f['airline'] in airline and f['f2.airline'] in airline]
     if max_price:
         result['nonstopFlight'] = [f for f in result['nonstopFlight'] if f['price'] <= max_price]
+        result['transitFlight'] = [f for f in result['transitFlight'] if f['price'] + f['f2.price'] <= max_price]
+
+    result['transitFlight'] = result['transitFlight'][0:5]  # 最大5个拼接航班
+
     for r in result['nonstopFlight']:
+        r['time'] = str(r['atime'] - r['dtime']).split(':')
         r['atime'] = r['atime'].strftime(time_format)
         r['dtime'] = r['dtime'].strftime(time_format)
     for r in result['transitFlight']:
+        r['time'] = str(r['f2.atime'] - r['dtime']).split(':')
+        r['stoptime'] = str(r['f2.dtime'] - r['atime']).split(':')
         r['atime'] = r['atime'].strftime(time_format)
         r['dtime'] = r['dtime'].strftime(time_format)
         r['f2.atime'] = r['f2.atime'].strftime(time_format)
