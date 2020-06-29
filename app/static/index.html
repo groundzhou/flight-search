@@ -300,7 +300,7 @@
             if (way == 1) {
                 if (start_place != null && goal_place != null && start_time != "--") {
                     $.ajax({
-                        url: 'http://node2:5000/api/flights',
+                        url: '/api/flights',
                         type: 'GET', //数据提交方式
                         dataType: 'json', //返回的数据类型格式
                         async: true, //异步请求
@@ -330,7 +330,7 @@
             if (way == 2) {
                 if (start_place != null && goal_place != null && start_time != "--" && return_time != "--") {
                     $.ajax({
-                        url: 'http://node2:5000/api/flights',
+                        url: '/api/flights',
                         type: 'GET', //数据提交方式
                         dataType: 'json', //返回的数据类型格式
                         async: true, //异步请求
@@ -354,7 +354,7 @@
                         }
                     });
                     $.ajax({
-                        url: 'http://node2:5000/api/flights',
+                        url: '/api/flights',
                         type: 'GET', //数据提交方式
                         dataType: 'json', //返回的数据类型格式
                         async: true, //异步请求
@@ -382,7 +382,7 @@
             }
             if (start_place != null && goal_place != null && start_time == "--" && return_time == "--") {
                 $.ajax({
-                    url: 'http://node2:5000/api/prices',
+                    url: '/api/prices',
                     type: 'GET', //数据提交方式
                     dataType: 'json', //返回的数据类型格式
                     async: true, //异步请求
@@ -406,7 +406,7 @@
             }
             if (start_place != null && start_time != "--" && goal_place == null && return_time == "--") {
                 $.ajax({
-                    url: 'http://node2:5000/api/destinations',
+                    url: '/api/destinations',
                     type: 'GET', //数据提交方式
                     dataType: 'json', //返回的数据类型格式
                     async: true, //异步请求
@@ -599,7 +599,7 @@
             }
 
             $.ajax({
-                url: 'http://node2:5000/api/flights',
+                url: '/api/flights',
                 type: 'GET', //数据提交方式
                 dataType: 'json', //返回的数据类型格式
                 async: true, //异步请求
@@ -625,7 +625,7 @@
             });
             if (way == 2) {
                 $.ajax({
-                    url: 'http://node2:5000/api/flights',
+                    url: '/api/flights',
                     type: 'GET', //数据提交方式
                     dataType: 'json', //返回的数据类型格式
                     async: true, //异步请求
@@ -654,7 +654,7 @@
 
         function getMessage_notra() {
             $.ajax({
-                url: 'http://node2:5000/api/flights',
+                url: '/api/flights',
                 type: 'GET', //数据提交方式
                 dataType: 'json', //返回的数据类型格式
                 async: true, //异步请求
@@ -681,7 +681,7 @@
             });
             if (way == 2) {
                 $.ajax({
-                    url: 'http://node2:5000/api/flights',
+                    url: '/api/flights',
                     type: 'GET', //数据提交方式
                     dataType: 'json', //返回的数据类型格式
                     async: true, //异步请求
@@ -711,7 +711,7 @@
 
         function getMessage_trasi() {
             $.ajax({
-                url: 'http://node2:5000/api/flights',
+                url: '/api/flights',
                 type: 'GET', //数据提交方式
                 dataType: 'json', //返回的数据类型格式
                 async: true, //异步请求
@@ -738,7 +738,7 @@
             });
             if (way == 2) {
                 $.ajax({
-                    url: 'http://node2:5000/api/flights',
+                    url: '/api/flights',
                     type: 'GET', //数据提交方式
                     dataType: 'json', //返回的数据类型格式
                     async: true, //异步请求
@@ -768,7 +768,7 @@
 
         function getMessage_notrasi() {
             $.ajax({
-                url: 'http://node2:5000/api/flights',
+                url: '/api/flights',
                 type: 'GET', //数据提交方式
                 dataType: 'json', //返回的数据类型格式
                 async: true, //异步请求
@@ -794,7 +794,7 @@
             });
             if (way == 2) {
                 $.ajax({
-                    url: 'http://node2:5000/api/flights',
+                    url: '/api/flights',
                     type: 'GET', //数据提交方式
                     dataType: 'json', //返回的数据类型格式
                     async: true, //异步请求
@@ -823,7 +823,7 @@
 
         function getMessage_price() {
             $.ajax({
-                url: 'http://node2:5000/api/flights',
+                url: '/api/flights',
                 type: 'GET', //数据提交方式
                 dataType: 'json', //返回的数据类型格式
                 async: true, //异步请求
@@ -849,7 +849,7 @@
             });
             if (way == 2) {
                 $.ajax({
-                    url: 'http://node2:5000/api/flights',
+                    url: '/api/flights',
                     type: 'GET', //数据提交方式
                     dataType: 'json', //返回的数据类型格式
                     async: true, //异步请求
@@ -878,7 +878,7 @@
 
         function getMessage_sort() {
             $.ajax({
-                url: 'http://node2:5000/api/flights',
+                url: '/api/flights',
                 type: 'GET', //数据提交方式
                 dataType: 'json', //返回的数据类型格式
                 async: true, //异步请求
@@ -904,7 +904,7 @@
             });
             if (way == 2) {
                 $.ajax({
-                    url: 'http://node2:5000/api/flights',
+                    url: '/api/flights',
                     type: 'GET', //数据提交方式
                     dataType: 'json', //返回的数据类型格式
                     async: true, //异步请求
@@ -1040,7 +1040,7 @@
                 start_time = param.name;
                 // 这里根据param填写你的跳转逻辑
                 $.ajax({
-                    url: 'http://node2:5000/api/flights',
+                    url: '/api/flights',
                     type: 'GET', //数据提交方式
                     dataType: 'json', //返回的数据类型格式
                     async: true, //异步请求
@@ -1198,12 +1198,12 @@
             for (var i = 0; i < data.length; i++) {
                 latitude = data[i].latitude;
                 longitude = data[i].longitude;
-                name = data[i].acity;
+                city = data[i].acity;
                 num = data[i].min_price;
                 var value = [];
                 value.push(longitude, latitude, num);
                 dmtData.push({
-                    name: name,
+                    name: city,
                     value: value
                 });
             }
@@ -1224,7 +1224,7 @@
                 goal_place = city[param.name];
                 // 这里根据param填写你的跳转逻辑
                 $.ajax({
-                    url: 'http://node2:5000/api/flights',
+                    url: '/api/flights',
                     type: 'GET', //数据提交方式
                     dataType: 'json', //返回的数据类型格式
                     async: true, //异步请求
@@ -1437,7 +1437,7 @@
             '延吉': 'YNJ',
             '盐城': 'YNZ',
             '伊春': 'LDS',
-            '伊宁': 'YIN',
+            '伊宁市': 'YIN',
             '宜宾': 'YBP',
             '宜昌': 'YIH',
             '宜春': 'YIC',
