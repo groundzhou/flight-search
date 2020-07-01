@@ -18591,11 +18591,11 @@ fieldset[disabled] .btn-transparent-2 {
 }
 
 .mdi-chevron-left:before {
-  content: "\f237";
+  content: "\f141";
 }
 
 .mdi-chevron-right:before {
-  content: "\f238";
+  content: "\f142";
 }
 
 .mdi-chevron-up:before {
@@ -18675,7 +18675,7 @@ fieldset[disabled] .btn-transparent-2 {
 }
 
 .mdi-close:before {
-  content: "\f24c";
+  content: "\f156";
 }
 
 .mdi-close-box:before {
