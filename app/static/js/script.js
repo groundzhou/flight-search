@@ -725,7 +725,7 @@ $(document).ready(function () {
           format = countDownItem.getAttribute('data-format'),
           settings = [];
 
-      d.setTime(Date.parse(time)).toLocaleString();
+      d.setTime(Date.parse(time).toLocaleString());
       settings[type] = d;
       settings['format'] = format;
       $(countDownItem).countdown(settings);
